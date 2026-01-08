@@ -1,0 +1,24 @@
+00500113 // li	sp,5
+00c00193 // li	gp,12
+ff718393 // addi	t2,gp,-9
+0023e233 // or	tp,t2,sp
+0041f2b3 // and	t0,gp,tp
+004282b3 // add	t0,t0,tp
+02728c63 // beq	t0,t2,50 <end>
+0041a233 // slt	tp,gp,tp
+00020463 // beqz	tp,28 <around>
+00000293 // li	t0,0
+0023a233 // slt	tp,t2,sp
+005203b3 // add	t2,tp,t0
+402383b3 // sub	t2,t2,sp
+0471aa23 // sw	t2,84(gp)
+06002103 // lw	sp,96(zero) # 60 <done+0x4>
+005104b3 // add	s1,sp,t0
+abcde237 // lui	tp,0xabcde
+7cc20213 // addi	tp,tp,1996 # ffffffffabcde7cc <done+0xffffffffabcde770>
+008001ef // jal	gp,50 <end>
+00100113 // li	sp,1
+00910133 // add	sp,sp,s1
+00410133 // add	sp,sp,tp
+0221a023 // sw	sp,32(gp)
+00210063 // beq	sp,sp,5c <done>
